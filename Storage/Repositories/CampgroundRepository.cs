@@ -37,7 +37,6 @@ namespace Campgrounds.Storage.Repositories
         didSucceed = true;
       }
       catch (Exception e) { e.ToString(); }
-      //$"There was an issue with adding pizza customer {customer}";
 
       //  c) foot
       return didSucceed;
@@ -53,7 +52,7 @@ namespace Campgrounds.Storage.Repositories
     public Campground Update(Campground campground)
     {
       //  a) head
-
+      //<...>
 
       //  b) body
 
@@ -88,4 +87,4 @@ namespace Campgrounds.Storage.Repositories
 
   }// /cla 'CustomerRepository'
 }// /ns '..Repositories'
- // EoF
+ // [EoF]

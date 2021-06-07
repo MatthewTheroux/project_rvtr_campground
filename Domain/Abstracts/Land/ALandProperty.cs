@@ -20,6 +20,8 @@ namespace Campgrounds.Domain.Abstracts.Land
 
     public List<ATennant> Tennants { get; set; }
 
+    public List<ATennant> EvictedTennants {get; set;} = new List<ATennant>();
+
     public bool IsRentable { get; protected set; }
     public bool HasElectricity { get; protected set; }
     public bool HasGas { get; protected set; }

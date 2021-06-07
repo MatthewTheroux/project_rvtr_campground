@@ -23,27 +23,24 @@ namespace Campgrounds.Domain.Abstracts.People.Owners
 
     //  A] Admit
     /// 
-   public abstract void Admit(ATennant tennant, ALandProperty propertyToAdmitTo);
+    public abstract bool Admit(List<ATennant> tennants, ALandProperty propertyToAdmitTo);
 
-   //  B] Bill
-  public abstract void Bill(ARenter renter, Price Amount);
+    //  B] Bill
+    public abstract void Bill(ARenter renter, Price Amount);
 
     //  C] Evict
-    /// Evict selected tennants from a given property
+    /// Evict or retire selected tennants from a given property
     //public abstract List<ATennant> Evict(ALandProperty propertyToEvictFrom, List<ATennant> tennantsToEvict);
 
-   /// Evict the given tennants and figure out from where
-   public abstract List<ATennant> Evict(List<ATennant> tennantsToEvict);
+    /// Evict the given tennants and figure out from where
+    public abstract List<ATennant> Evict(List<ATennant> tennantsToEvict);
 
-   /// Just evict *one* tennant.
-   public abstract ATennant Evict(ATennant theTennantToEvict);
+    /// Just evict or retire *one* tennant.
+    //public abstract bool Relocate(ATennant theTennantToEvict);
 
-   
-    /// Evict *all* tennants of the given property
+
+    /// Evict  *all* tennants of the given property
     public abstract List<ATennant> Evict(ALandProperty propertyToEvictFrom);
-
-    /// A Tennant leaves by choice
-    public abstract bool Retire(ATennant tennant);
 
 
     // [III]. FOOT

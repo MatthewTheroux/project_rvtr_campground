@@ -14,13 +14,13 @@ namespace Campgrounds.Storage
 
     public CampgroundOwnerRepository CampgroundOwners {get;}
 
-    public CampsiteRepository CampsiteRepositories {get;}
+    public CampsiteRepository Campsites {get;}
 
     public CampsiteRenterRepository CampsiteRenters {get;}
 
     public CampsiteTennantRepository CampsiteTennants {get;}
 
-    public CampgroundTranactionRepository CampgroundTranasactions {get;}
+    public CampgroundTransactionRepository CampgroundTranasactions {get;}
 
 
   }// /cla 'UoW'

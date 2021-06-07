@@ -1,6 +1,7 @@
 // [I]. HEAD
 //  A] Libraries
 using System.Collections.Generic;
+using System.Text;
 
 using Campgrounds.Domain.Abstracts.Land;
 using Campgrounds.Domain.Abstracts.People;
@@ -17,23 +18,31 @@ namespace Campgrounds.Domain.Models.Land
   public class Campground : ALandProperty
   {
     //  B] Properties
-    public string Name {get; protected set;}
-    public new CampgroundOwner Owner {get; protected set;}
-    public List<Campsite> Campsites {get; set;}
+    public string Name { get; protected set; }
+    public new CampgroundOwner Owner { get; protected set; }
+    public List<Campsite> Campsites { get; set; }
 
-    public List<CampsiteRenter> Renters {get; set;}
-    public new List<CampsiteTennant> Tennants {get; set;}
+    public List<CampsiteRenter> Renters { get; set; }
+    public new List<CampsiteTennant> Tennants { get; set; }
 
-    public List<CampgroundTransaction> Transactions {get; set;}
+
+
+    public List<CampgroundTransaction> Transactions { get; set; }
 
 
     // [III]. FOOT
     public override string ToString()
     {
-      //<...>
-      return"";
+      //  a) head
+      //StringBuilder sb = new StringBuilder();
+
+      //  b) body
+      //sb.AppendLine();
+
+      //  c) foot: Return location name + address.
+      return base.ToString();
     }
 
   }// /cla 'CampgroundOwner'
 }// /ns '..Models..Owners'
-// [EoF]
+ // [EoF]
