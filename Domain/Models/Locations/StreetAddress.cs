@@ -2,7 +2,7 @@
 //  A] Libraries
 using System.Text;
 
-namespace ClerkTracker.Domain.Models.Locations
+namespace Campgrounds.Domain.Models.Locations
 {
   public class StreetAddress
   {
@@ -45,7 +45,8 @@ namespace ClerkTracker.Domain.Models.Locations
       Direction = _direction;
     }// /smart cxtr
 
-    /// default constructor = 300 Alamo Plaza
+    /// parameterless constructor = default 'StreetAddress''
+    /// 300 Alamo Plaza
     public StreetAddress():this(300, "Alamo Plaza"){}
 
 

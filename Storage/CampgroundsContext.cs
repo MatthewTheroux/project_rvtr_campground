@@ -8,12 +8,10 @@ using Microsoft.Extensions.Configuration;
 
 using Campgrounds.Domain.Abstracts;
 using Campgrounds.Domain.Models;
-using Campgrounds.Domain.Models.Campground;
-using Campgrounds.Domain.Models.Campsite;
-using Campgrounds.Domain.Models.CampgroundOwner;
-using Campgrounds.Domain.Models.CampsiteRenter;
-using Campgrounds.Domain.Models.CampsiteTennant;
-using Campgrounds.Domain.Models.CampgroundTransaction;
+using Campgrounds.Domain.Models.People;
+using Campgrounds.Domain.Models.People.Owners;
+using Campgrounds.Domain.Models.Land;
+
 
 ///
 namespace Campgrounds.Storage
@@ -23,14 +21,21 @@ namespace Campgrounds.Storage
     //  B] Properties
     private const int INDEX_FOR_UNSUPPORTED = -1;
 
-  // [II]. BODY
-
+    public List<Campground> Campgrounds {get; private set;}
+    public List<CampgroundOwner> CampgroundOwners {get; private set;}
+    public List<Campsite> Campsites {get; private set;}
+    public List<CampsiteRenter> CampsiteRenters {get; private set;}
+    public List<CampsiteTennant> CampsiteTennants {get; private set;}
     
-  // [III]. FOOT
-  public void Save()
-  {
 
-  }
+    // [II]. BODY
+
+
+    // [III]. FOOT
+    public void Save()
+    {
+
+    }
 
   }// /cla 'CampgroundContext'
 }// /ns '..Storage'

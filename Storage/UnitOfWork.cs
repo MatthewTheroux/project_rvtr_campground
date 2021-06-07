@@ -1,9 +1,9 @@
 // [I]. HEAD
 //  A] Libraries
-using ClerkTracker.Storage.Repositories;
+using Campgrounds.Storage.Repositories;
 
 ///
-namespace ClerkTracker.Storage
+namespace Campgrounds.Storage
 {
   /// leverages the repositories, and more
    public class UnitOfWork

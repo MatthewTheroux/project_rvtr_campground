@@ -1,19 +1,26 @@
+// [I]. HEAD
+//  A] Libraries
 using System;
-//using System.Console;
-using System.Text;
 
-namespace PizzaBox.Domain.Abstracts
+/// 
+namespace Campgrounds.Domain.Models.Contact
 {
-
+  /// 
   public class PhoneNumber
   {
+    //  B] Properties
+    //   1.
     private int _countryCode = 1; //USA
     private int _areaCode; // 3 digits
     private int _districtCode; // 3 digits
     private int _index; // 4 digits
 
-    //  B] Constructs
+    //   2.
+
+
+    // [II]. BODY: Constructs
     /*
+    /// Poll
     public PhoneNumber()
     {
         System.Console.Write("New Phone Number: ");
@@ -32,19 +39,22 @@ namespace PizzaBox.Domain.Abstracts
 
     private void ReportInvalidPhoneNumber()
     {
-      System.Console.WriteLine("The phone number is not valid.");
+      throw new ArgumentException("The format or value for a phone number is not valid.");
     }
+
+    /// Separate the pieces.
 
     public PhoneNumber(int n)
     {
-      // Seperate the pieces.
+
     }
 
+    // [III], FOOT
+    /// the string representation of a phone number
     public override string ToString()
     {
-      string s = "";
-      //Add the hyphens.
-      return s;
+      return $"+{_countryCode}-{_areaCode}-{_districtCode}-{_index}";
     }
-  }// /cla
-}// /ns
+  }// /cla 'PhoneNumber'
+}// /ns '..Models.ContactInfo'
+// [EoF]

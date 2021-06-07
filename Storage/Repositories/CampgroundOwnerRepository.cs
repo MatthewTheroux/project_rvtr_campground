@@ -6,12 +6,13 @@ using System.Linq;
 
 using Campgrounds.Domain.Interfaces;
 using Campgrounds.Domain.Models.People;
+using Campgrounds.Domain.Models.People.Owners;
 
 ///
 namespace Campgrounds.Storage.Repositories
 {
   ///
-  public class CampgroundOwnerRepository : IRepository<CampgroundOwner>
+  public class CampgroundOwnerRepository : IRepositable<CampgroundOwner>
   {
     public List<CampgroundOwner> CampgroundOwner { get; set; } //<...>
 
@@ -24,7 +25,7 @@ namespace Campgrounds.Storage.Repositories
 
     /// [II]. BODY: Use CRUD
     /// 1. Create
-    public bool Insert(CampgroundOwner campgroundowner)
+    public bool Insert(CampgroundOwner campgroundOwner)
     {
       //  a) head
       bool didSucceed = false;
@@ -32,7 +33,7 @@ namespace Campgrounds.Storage.Repositories
       //  b) body
       try
       {
-        _context.CampgroundOwners.Add(campgroundowner);
+        _context.CampgroundOwners.Add(campgroundOwner);
         didSucceed = true;
       }
       catch (Exception e) { e.ToString(); }
@@ -49,30 +50,29 @@ namespace Campgrounds.Storage.Repositories
     }
 
     /// 3. Update
-    public CampgroundOwner Update(CampgroundOwner campgroundowner)
+    public CampgroundOwner Update(CampgroundOwner campgroundOwner)
     {
       //  a) head
 
 
       //  b) body
-
+      //<...>
 
       //  c)
-      return campgroundowner;
+      return campgroundOwner;
     }// /'Update'
 
     /// 4. Delete
-    public bool Delete(CampgroundOwner campgroundowner)
+    public bool Delete(CampgroundOwner campgroundOwner)
     {
       //  a) head
       bool didSucceed = false;
 
       //  b) body
-
+      _context.CampgroundOwners.Remove(campgroundOwner);
 
       //  c)
-      didSucceed = true;
-      return didSucceed;
+      return didSucceed = true;
     }
 
     // [III]. FOOT

@@ -1,23 +1,28 @@
+// [I]. HEAD
+//  A] Libraries
 using System;
 using System.Collections.Generic;
 
 ///
-namespace ClerkTracker.Domain.Interfaces
+namespace Campgrounds.Domain.Interfaces
 {
   /// Use C.R.U.D.
-  public interface IRepository<T> where T : class
+  public interface IRepositable<T> where T : class
   {
-    /// Create.
+    // [II]. BODY
+
+    /// C reate.
     public bool Insert(T item);
 
-    /// Read.
+    /// R ead.
     public IEnumerable<T> Select(Func<T, bool> filter);
 
-    /// Update.
+    /// U pdate.
     public T Update(T item);
 
-    /// Delete.
+    /// D elete.
     public bool Delete(T item);
-  }// /ifc 'IRepository'
+
+  }// /ifc 'IReposiable'
 }// /ns '..Interfaces'
  // [EoF]

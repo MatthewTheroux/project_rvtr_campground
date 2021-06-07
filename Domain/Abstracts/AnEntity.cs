@@ -6,6 +6,9 @@ namespace Campgrounds.Domain.Abstracts
     public int EntityId { get; set; }//protected
     public string EntityName { get; set; }//protected
 
+
+    public abstract override string ToString();
+
   }// /cla 'AnEntity'
 }// /ns '..Abstracts
  // [EoF]

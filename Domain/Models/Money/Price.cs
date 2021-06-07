@@ -30,7 +30,7 @@ namespace Campgrounds.Domain.Models.Money
     ///
     public string As2Decimal(decimal _amt)
     {
-      return String.Format("{0:C2}", _amt)
+      return String.Format("{0:C2}", _amt);
     }// /md 'As2Decimal'
 
     /// 

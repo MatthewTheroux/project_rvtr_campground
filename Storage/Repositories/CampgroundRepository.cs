@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Campgrounds.Domain.Interfaces;
-using Campgrounds.Domain.Models.Locations;
+using Campgrounds.Domain.Models.Land;
+using Campgrounds.Storage;
 
 ///
 namespace Campgrounds.Storage.Repositories
 {
   ///
-  public class CampgroundRepository : IRepository<Campground>
+  public class CampgroundRepository : IRepositable<Campground>
   {
     public List<Campground> Campground { get; set; } //<...>
 
@@ -24,7 +25,7 @@ namespace Campgrounds.Storage.Repositories
 
     /// [II]. BODY: Use CRUD
     /// 1. Create
-    public bool Insert(Campground campgroundowner)
+    public bool Insert(Campground campground)
     {
       //  a) head
       bool didSucceed = false;
@@ -32,7 +33,7 @@ namespace Campgrounds.Storage.Repositories
       //  b) body
       try
       {
-        _context.Campgrounds.Add(campgroundowner);
+        _context.Campgrounds.Add(campground);
         didSucceed = true;
       }
       catch (Exception e) { e.ToString(); }
@@ -49,7 +50,7 @@ namespace Campgrounds.Storage.Repositories
     }
 
     /// 3. Update
-    public Campground Update(Campground campgroundowner)
+    public Campground Update(Campground campground)
     {
       //  a) head
 
@@ -58,21 +59,20 @@ namespace Campgrounds.Storage.Repositories
 
 
       //  c)
-      return campgroundowner;
+      return campground;
     }// /'Update'
 
     /// 4. Delete
-    public bool Delete(Campground campgroundowner)
+    public bool Delete(Campground campground)
     {
       //  a) head
       bool didSucceed = false;
 
       //  b) body
-
+      _context.Campgrounds.Remove(campground);
 
       //  c)
-      didSucceed = true;
-      return didSucceed;
+      return didSucceed = true;
     }
 
     // [III]. FOOT
